@@ -89,8 +89,9 @@
                     });
                 });
 
-                $('#reset-car-form').click(function(){
-                    resetSelect('#car-make', 'Select car make');
+                $('#reset-car-form').click(function(e){
+                    e.preventDefault();
+                    $('#car-make').val('Select car make');
                     resetSelect('#car-year', 'Select car year');
                     resetSelect('#car-model', 'Select car model');
                     resetSelect('#car-variant', 'Select car variant');
@@ -126,7 +127,7 @@
                             if($('.alert').length){
                                 $('.alert').remove();
                             }
-                            $('#price').append('<div class="alert alert-success mb-0" role="alert">Price: RM'+response+',000 </div>');
+                            $('#price').append('<div class="alert alert-success mb-0 ml-auto" role="alert">Price: RM'+response+',000 </div>');
                         }
                     });
                 });
@@ -161,9 +162,9 @@
                         <option selected>Select car variant</option>
                       </select>
                 </div>
-                <div id='price' class="d-flex justify-content-between">
-                    <button type="submit" class="btn btn-primary p" style="height: 58px;">Get Quote</button>
-                    <button id="reset-car-form" class="btn btn-primary p" style="height: 58px;">Reset</button>
+                <div id='price' class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary" style="height: 58px;">Get Quote</button>
+                    <button id="reset-car-form" class="btn btn-primary bg-danger border-danger" style="height: 58px;">Reset</button>
                 </div>
             </form>
         </div>
