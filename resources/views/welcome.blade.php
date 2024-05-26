@@ -89,6 +89,13 @@
                     });
                 });
 
+                $('#reset-car-form').click(function(){
+                    resetSelect('#car-make', 'Select car make');
+                    resetSelect('#car-year', 'Select car year');
+                    resetSelect('#car-model', 'Select car model');
+                    resetSelect('#car-variant', 'Select car variant');
+                });
+
                 // form on submit event
                 $('form').submit(function(e){
                     e.preventDefault();
@@ -156,6 +163,7 @@
                 </div>
                 <div id='price' class="d-flex justify-content-between">
                     <button type="submit" class="btn btn-primary p" style="height: 58px;">Get Quote</button>
+                    <button id="reset-car-form" class="btn btn-primary p" style="height: 58px;">Reset</button>
                 </div>
             </form>
         </div>

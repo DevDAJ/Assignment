@@ -29,7 +29,7 @@ class CarController extends Controller
             return response()->json(Car::where('make', $make)
             ->where('year', $year)
             ->where('model', $model)
-            
+            ->distinct('variant')
             ->get('variant'));
         }
         if ($year) {
